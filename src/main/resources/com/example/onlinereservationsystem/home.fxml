@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane focusTraversable="true" maxHeight="500.0" maxWidth="700.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlinereservationsystem.HomeController">
+   <stylesheets>
+      <URL value="@./../styles/styles.css" />
+   </stylesheets>
+   <left>
+      <AnchorPane prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: #252525;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelProjectHeading" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="206.0" lineSpacing="2.0" prefHeight="289.0" prefWidth="331.0" text="Online Reservation System" textAlignment="CENTER" textFill="#f8f7f7" wrapText="true">
+               <font>
+                  <Font name="Ubuntu" size="48.0" />
+               </font>
+            </Label>
+            <ImageView id="imageTrain" fx:id="imageTrain" fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" style="-fx-color: white;">
+               <image>
+                  <Image url="@../../../../../../assets/train.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="tfUsername" layoutX="107.0" layoutY="223.0" promptText="Enter username (email)" />
+            <PasswordField fx:id="tfPassword" layoutX="107.0" layoutY="275.0" promptText="Enter password" />
+            <Button fx:id="btnLogin" layoutX="136.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleLoginButton" prefHeight="24.0" prefWidth="114.0" style="-fx-background-color: #252525;" text="Login" textFill="#f8f8f8" />
+            <Label fx:id="labelLogin" layoutX="145.0" layoutY="15.0" text="Login">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Hyperlink fx:id="linkSignup" layoutX="102.0" layoutY="432.0" onAction="#handleSignupLink" text="Don't have account? Signup" textFill="#0d0d0d" />
+            <ImageView fx:id="imageUsers" fitHeight="104.0" fitWidth="154.0" layoutX="116.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../assets/users.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imageUser" fitHeight="24.0" fitWidth="33.0" layoutX="56.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../assets/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imagePassword" fitHeight="24.0" fitWidth="29.0" layoutX="55.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../assets/password.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnClose" layoutX="331.0" layoutY="-2.0" mnemonicParsing="false" onAction="#handleCloseButton" style="-fx-background-color: transparent;" text="X">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label id="labelLoginMessage" fx:id="labelLoginMessage" alignment="CENTER" layoutX="108.0" layoutY="315.0" prefHeight="42.0" prefWidth="171.0" textAlignment="CENTER" wrapText="true" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lumanosimo&family=Merienda&display=swap');
+*{
+
+}
+#ticketBookingHeading,
+#labelProjectHeading,
+#labelTicketStatusHeading,
+#labelLogin,
+#labelRegistrationHeading{
+    -fx-font-family: "Merienda", cursive;
+}
+

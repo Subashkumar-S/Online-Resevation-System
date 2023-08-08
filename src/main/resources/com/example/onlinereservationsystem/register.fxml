@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/20.0.1" stylesheets="@../styles/styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlinereservationsystem.RegisterController">
+   <children>
+      <AnchorPane layoutY="-5.0" prefHeight="60.0" prefWidth="450.0" style="-fx-background-color: #404040;">
+         <children>
+            <Label fx:id="labelRegistrationHeading" layoutX="89.0" layoutY="20.0" text="User Registration" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="labelName" layoutX="98.0" layoutY="100.0" text="Enter name :" />
+      <TextField fx:id="tfName" layoutX="98.0" layoutY="123.0" prefHeight="24.0" prefWidth="272.0" promptText="Subash Kumar" />
+      <Label fx:id="labelEmail" layoutX="97.0" layoutY="165.0" text="Enter email:" />
+      <TextField fx:id="tfEmail" layoutX="97.0" layoutY="190.0" prefHeight="24.0" prefWidth="272.0" promptText="example@gamil.com" />
+      <Label fx:id="labelPhoneNumber" layoutX="98.0" layoutY="232.0" text="Enter phone number :" />
+      <TextField fx:id="tfPhoneNumber" layoutX="98.0" layoutY="258.0" prefHeight="24.0" prefWidth="272.0" promptText="9876543210" />
+      <Label fx:id="labelPassword" layoutX="100.0" layoutY="302.0" text="Enter password :" />
+      <Label fx:id="labelConfirmPassword" layoutX="98.0" layoutY="371.0" text="Confirm password :" />
+      <Button fx:id="btnRegister" layoutX="98.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleRegisterButton" prefHeight="24.0" prefWidth="272.0" style="-fx-background-color: #303030;" text="Register" textFill="#f5f5f5" />
+      <Button fx:id="btnClose" layoutX="99.0" layoutY="502.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="24.0" prefWidth="272.0" style="-fx-background-color: #303030;" text="Close" textFill="WHITE" />
+      <Hyperlink fx:id="linkLogin" layoutX="208.0" layoutY="593.0" text="Login">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Hyperlink>
+      <Label fx:id="labelRegistrationMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="556.0" prefHeight="20.0" prefWidth="272.0" />
+      <PasswordField fx:id="tfPassword" layoutX="98.0" layoutY="327.0" prefHeight="24.0" prefWidth="272.0" promptText="Enter new password" />
+      <PasswordField layoutX="98.0" layoutY="397.0" prefHeight="24.0" prefWidth="272.0" promptText="Retype password" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="849.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlinereservationsystem.StatusController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #dad7cd;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelUserName" alignment="CENTER" layoutX="13.0" layoutY="187.0" prefHeight="16.0" prefWidth="174.0" text="SUbashkumar" textAlignment="JUSTIFY" />
+            <Label fx:id="labelEmail" alignment="CENTER" layoutX="14.0" layoutY="219.0" prefHeight="16.0" prefWidth="169.0" text="Demo@gamil.com" textAlignment="CENTER" wrapText="true" />
+            <ImageView fx:id="imageUser" fitHeight="150.0" fitWidth="177.0" layoutX="25.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../assets/user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelTicketStatusHeading" layoutX="257.0" layoutY="27.0" text="Ticket Status">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="94.0" layoutY="95.0" text="Enter PNR number :" />
+            <TextField fx:id="tfPnrNumber" layoutX="257.0" layoutY="91.0" prefHeight="24.0" prefWidth="195.0" />
+            <TableView fx:id="tableTicketDetails" layoutX="108.0" layoutY="138.0" prefHeight="287.0" prefWidth="366.0">
+              <columns>
+                <TableColumn fx:id="columnNameColumn" prefWidth="182.0" text="Ticket Details" />
+                <TableColumn fx:id="valueColumn" prefWidth="183.0" text="Passenger Details" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnViewDetails" layoutX="77.0" layoutY="484.0" minHeight="25.0" minWidth="100.0" mnemonicParsing="false" onAction="#handleViewDetailsButton" prefWidth="100.0" text="View Details" />
+            <Button fx:id="btnCancelTicket" layoutX="263.0" layoutY="484.0" minHeight="25.0" minWidth="100.0" mnemonicParsing="false" onAction="#handleCancelTicketButton" text="Cancel Ticket" />
+            <Button fx:id="btnClose" layoutX="444.0" layoutY="484.0" minHeight="25.0" minWidth="100.0" mnemonicParsing="false" onAction="#handleCloseButton" text="Close" />
+            <Label fx:id="labelTicketStatusMessage" alignment="CENTER" layoutX="109.0" layoutY="437.0" prefHeight="24.0" prefWidth="369.0" textAlignment="CENTER" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

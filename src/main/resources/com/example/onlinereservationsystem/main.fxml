@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlinereservationsystem.MainController">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #afafaf;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageUser" fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../assets/user.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelUserName" alignment="CENTER" layoutX="3.0" layoutY="173.0" prefHeight="20.0" prefWidth="200.0" text="Subashkumar" />
+            <Label fx:id="labelEmail" alignment="CENTER" layoutX="8.0" layoutY="206.0" prefHeight="20.0" prefWidth="200.0" text="demo@gmail.com" />
+            <Button fx:id="btnCheckStatus" layoutX="3.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleCheckStatusButton" prefWidth="200.0" style="-fx-background-color: #151515;" stylesheets="@../styles/styles.css" text="Check Status" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+
+      <AnchorPane fx:id="ticketBooking" prefHeight="600.0" prefWidth="497.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="ticketBookingHeading" layoutX="101.0" layoutY="13.0" text="Ticket Booking">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="48.0" layoutY="82.0" prefHeight="18.0" prefWidth="114.0" text="Starting from :" />
+            <Label layoutX="48.0" layoutY="128.0" text="Destination :" />
+            <ComboBox fx:id="comboBoxDeparture" layoutX="187.0" layoutY="78.0" prefHeight="26.0" prefWidth="185.0" promptText="Select depature" />
+            <ComboBox fx:id="comboBoxDestination" layoutX="188.0" layoutY="124.0" prefHeight="26.0" prefWidth="185.0" promptText="Select destination" />
+            <Label layoutX="48.0" layoutY="246.0" text="Train number :" />
+            <DatePicker fx:id="datePicker" layoutX="187.0" layoutY="182.0" prefHeight="26.0" prefWidth="185.0" promptText="Select date of journey" />
+            <TextField fx:id="tfTrainNumber" layoutX="187.0" layoutY="242.0" prefHeight="26.0" prefWidth="185.0" />
+            <Label layoutX="49.0" layoutY="186.0" text="Date of journey :" />
+            <Label layoutX="51.0" layoutY="357.0" text="Select Class :" />
+            <ComboBox fx:id="comboBoxClass" layoutX="187.0" layoutY="353.0" prefWidth="185.0" promptText="Select berth" />
+            <Label layoutX="48.0" layoutY="300.0" text="Train name :" />
+            <TextField fx:id="tfTrainName" layoutX="187.0" layoutY="296.0" prefHeight="26.0" prefWidth="185.0" />
+            <TextField fx:id="tfPassengerName" layoutX="187.0" layoutY="403.0" prefHeight="26.0" prefWidth="185.0" />
+            <Label layoutX="51.0" layoutY="408.0" text="Pasenger Name :" />
+            <Button fx:id="btnConfirm" layoutX="69.0" layoutY="546.0" mnemonicParsing="false" onAction="#handleConfirmButton" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #151515;" text="Confirm" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Label fx:id="labelBooking" alignment="CENTER" contentDisplay="CENTER" layoutX="53.0" layoutY="494.0" prefHeight="39.0" prefWidth="426.0" textAlignment="CENTER" wrapText="true" />
+            <Button fx:id="btnClose" layoutX="222.0" layoutY="546.0" minHeight="30.0" minWidth="125.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #151515;" text="Close" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Label layoutX="51.0" layoutY="459.0" text="Age :" />
+            <TextField fx:id="tfAge" layoutX="186.0" layoutY="456.0" prefHeight="26.0" prefWidth="189.0" />
+         </children>
+      </AnchorPane>
+
+   </center>
+   <right>
+      <AnchorPane prefHeight="600.0" prefWidth="495.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="trainsTable" layoutX="19.0" layoutY="102.0" prefHeight="498.0" prefWidth="458.0">
+               <columns>
+                  <TableColumn fx:id="trainNumber" prefWidth="56.0" text="Number" />
+                  <TableColumn fx:id="trainName" prefWidth="122.0" text="Name" />
+                  <TableColumn fx:id="trainDeparture" prefWidth="102.0" text="Departure" />
+                  <TableColumn fx:id="trainDestination" prefWidth="102.0" text="Destination" />
+                  <TableColumn fx:id="trainType" prefWidth="75.0" text="Type" />
+               </columns>
+            </TableView>
+            <Label layoutX="14.0" layoutY="58.0" prefHeight="18.0" prefWidth="79.0" text="Keyword :" />
+            <TextField fx:id="tfKeyword" layoutX="106.0" layoutY="49.0" prefHeight="26.0" prefWidth="279.0" />
+            <Label layoutX="20.0" layoutY="17.0" text="Enter keywords like name, departure or destination">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
