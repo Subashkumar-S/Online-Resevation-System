@@ -103,7 +103,6 @@ public class HomeController implements Initializable {
 
         } catch (IOException e) {
             e.printStackTrace();
-            // Handle the exception appropriately
         }
     }
 

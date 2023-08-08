@@ -13,6 +13,7 @@ public class HelloApplication extends Application {
     private static Passenger currentUser;
     static  Stage mainStage;
     static Stage loginStage;
+
     @Override
     public void start(Stage stage) throws IOException {
         loginStage = stage;
@@ -57,4 +58,5 @@ public class HelloApplication extends Application {
         StatusController statusController = loader.getController();
         statusController.initialize(currentUser);
     }
+
 }

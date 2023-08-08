@@ -29,7 +29,7 @@
       <Label fx:id="labelConfirmPassword" layoutX="98.0" layoutY="371.0" text="Confirm password :" />
       <Button fx:id="btnRegister" layoutX="98.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleRegisterButton" prefHeight="24.0" prefWidth="272.0" style="-fx-background-color: #303030;" text="Register" textFill="#f5f5f5" />
       <Button fx:id="btnClose" layoutX="99.0" layoutY="502.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="24.0" prefWidth="272.0" style="-fx-background-color: #303030;" text="Close" textFill="WHITE" />
-      <Hyperlink fx:id="linkLogin" layoutX="208.0" layoutY="593.0" text="Login">
+      <Hyperlink fx:id="linkLogin" layoutX="208.0" layoutY="593.0" text="Login" onAction="#handleLoginLink">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Hyperlink>

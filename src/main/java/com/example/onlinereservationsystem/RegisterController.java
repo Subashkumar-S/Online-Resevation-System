@@ -2,8 +2,14 @@ package com.example.onlinereservationsystem;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -37,7 +43,7 @@ public class RegisterController {
         Platform.exit();
     }
 
-    public void handleRegisterButton() throws ClassNotFoundException {
+    public void handleRegisterButton()  {
         // Store values from user input
         name = tfName.getText();
         email = tfEmail.getText();
@@ -75,5 +81,26 @@ public class RegisterController {
             throw new RuntimeException(e);
         }
         labelRegistrationMessage.setText("Registration successful! Login now.");
+    }
+
+    public void handleLoginLink() {
+        try {
+            // Get the login stage (window)
+            Stage loginStage = (Stage) linkLogin.getScene().getWindow();
+            // Close the login page
+            loginStage.close();
+            // Load the registration FXML file
+            Parent registrationRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
+            // Create a new scene with the registration content
+            Scene registrationScene = new Scene(registrationRoot);
+            // Show the registration page
+            Stage registrationStage = new Stage();
+            registrationStage.initStyle(StageStyle.UNDECORATED);
+            registrationStage.setScene(registrationScene);
+            registrationStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
