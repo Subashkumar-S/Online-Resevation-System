@@ -85,25 +85,8 @@ public class HomeController implements Initializable {
 
     }
 
-    public void handleSignupLink() {
-        try {
-            // Get the login stage (window)
-            Stage loginStage = (Stage) linkSignup.getScene().getWindow();
-            // Close the login page
-            loginStage.close();
-            // Load the registration FXML file
-            Parent registrationRoot = FXMLLoader.load(getClass().getResource("register.fxml"));
-            // Create a new scene with the registration content
-            Scene registrationScene = new Scene(registrationRoot);
-            // Show the registration page
-            Stage registrationStage = new Stage();
-            registrationStage.initStyle(StageStyle.UNDECORATED);
-            registrationStage.setScene(registrationScene);
-            registrationStage.show();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void handleSignupLink() throws IOException {
+        HelloApplication.showRegistrationPage();
     }
 
     public void validateLogin() {

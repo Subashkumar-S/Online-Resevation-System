@@ -12,6 +12,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
@@ -50,6 +51,17 @@ public class RegisterController {
         phoneNumber = tfPhoneNumber.getText();
         password = tfPassword.getText();
         confirmPassword = tfConfirmPassword.getText();
+        // Check all fields are not empty
+        if (Objects.equals(name, "") || Objects.equals(email, "")  || Objects.equals(phoneNumber, "") || Objects.equals(password, "") || Objects.equals(confirmPassword, "")){
+            labelRegistrationMessage.setText("Enter all the fields");
+            return;
+        }
+        boolean userAlreadyExists = isUsernameExists(email);
+        //System.out.println( "userAlreadyExists is "+ userAlreadyExists);
+        if (userAlreadyExists) {
+            labelRegistrationMessage.setText("Email id already resitered.");
+            return;
+        }
 
         if(Objects.equals(password, confirmPassword)){
             updateUser();
@@ -58,6 +70,35 @@ public class RegisterController {
         }
 
     }
+
+    public boolean isUsernameExists(String username) {
+        boolean isExists = false;
+
+        try {
+            // Connect to database
+            DatabaseHandler connectNow = new DatabaseHandler();
+            Connection connectDB = connectNow.getConnection();
+            String query = "SELECT COUNT(*) FROM customers WHERE email = ?";
+
+            PreparedStatement statement = connectDB.prepareStatement(query);
+            statement.setString(1, username);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                isExists = (count > 0);
+            }
+
+            resultSet.close();
+            statement.close();
+            connectDB.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return isExists;
+    }
+
     public void updateUser(){
         // Connect to database
         DatabaseHandler connectNow = new DatabaseHandler();
@@ -78,29 +119,19 @@ public class RegisterController {
             statement.close();
             connectDB.close();
         } catch (SQLException e) {
+
             throw new RuntimeException(e);
+
         }
         labelRegistrationMessage.setText("Registration successful! Login now.");
     }
 
+
     public void handleLoginLink() {
         try {
-            // Get the login stage (window)
-            Stage loginStage = (Stage) linkLogin.getScene().getWindow();
-            // Close the login page
-            loginStage.close();
-            // Load the registration FXML file
-            Parent registrationRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home.fxml")));
-            // Create a new scene with the registration content
-            Scene registrationScene = new Scene(registrationRoot);
-            // Show the registration page
-            Stage registrationStage = new Stage();
-            registrationStage.initStyle(StageStyle.UNDECORATED);
-            registrationStage.setScene(registrationScene);
-            registrationStage.show();
-
+            HelloApplication.showLoginPage();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }

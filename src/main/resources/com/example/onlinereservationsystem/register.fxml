@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/20.0.1" stylesheets="@../styles/styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlinereservationsystem.RegisterController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="450.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.onlinereservationsystem.RegisterController">
    <children>
       <AnchorPane layoutY="-5.0" prefHeight="60.0" prefWidth="450.0" style="-fx-background-color: #404040;">
          <children>
@@ -29,12 +29,12 @@
       <Label fx:id="labelConfirmPassword" layoutX="98.0" layoutY="371.0" text="Confirm password :" />
       <Button fx:id="btnRegister" layoutX="98.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleRegisterButton" prefHeight="24.0" prefWidth="272.0" style="-fx-background-color: #303030;" text="Register" textFill="#f5f5f5" />
       <Button fx:id="btnClose" layoutX="99.0" layoutY="502.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="24.0" prefWidth="272.0" style="-fx-background-color: #303030;" text="Close" textFill="WHITE" />
-      <Hyperlink fx:id="linkLogin" layoutX="208.0" layoutY="593.0" text="Login" onAction="#handleLoginLink">
+      <Hyperlink fx:id="linkLogin" layoutX="208.0" layoutY="593.0" onAction="#handleLoginLink" text="Login">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Hyperlink>
       <Label fx:id="labelRegistrationMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="556.0" prefHeight="20.0" prefWidth="272.0" />
       <PasswordField fx:id="tfPassword" layoutX="98.0" layoutY="327.0" prefHeight="24.0" prefWidth="272.0" promptText="Enter new password" />
-      <PasswordField layoutX="98.0" layoutY="397.0" prefHeight="24.0" prefWidth="272.0" promptText="Retype password" />
+      <PasswordField fx:id="tfConfirmPassword" layoutX="98.0" layoutY="397.0" prefHeight="24.0" prefWidth="272.0" promptText="Retype password" />
    </children>
 </AnchorPane>
