@@ -28,8 +28,8 @@ Welcome to the Online Reservation System project, a JavaFX application for booki
     ![](Screenshot/ticketStatusCheckingPage.png)
   
 ## Demo video
-[![Demo video](https://github.com/Subashkumar-S/Online_Reservation_System/blob/main/Demo/demoVideo.webm)](https://github.com/Subashkumar-S/Online_Reservation_System/blob/main/Demo/demoVideo.webm)
-[Screencast from 08-08-23 08:39:59 PM IST.webm](https://github.com/Subashkumar-S/Online_Reservation_System/assets/112946164/f7405dfe-bfce-4051-8f32-603e58444cdd)
+[[Demo video](https://github.com/Subashkumar-S/Online_Reservation_System/blob/main/Demo/demoVideo.webm)](https://github.com/Subashkumar-S/Online_Reservation_System/blob/main/Demo/demoVideo.webm)
+
 
 
 ## Prerequisites
