@@ -5,6 +5,7 @@ Welcome to the Online Reservation System project, a JavaFX application for booki
 ## Table of Contents
 - [Features](#features)
 - [Screenshots](#screenshots)
+- [Demo video](#Demo video)
 - [Prerequisites](#prerequisites)
 - [Usage](#usage)
 
@@ -25,6 +26,9 @@ Welcome to the Online Reservation System project, a JavaFX application for booki
   ![](Screenshot/ticketBookingPage.png)
 - Ticket Status Checking/Cancellation Page
     ![](Screenshot/ticketStatusCheckingPage.png)
+## Demo video
+![](Demo/demoVideo.webm)
+
 
 ## Prerequisites
 - Java JDK 
